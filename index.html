@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Eternum — Official</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>🔥 ETERNUM 🔥</h1>
+    <p>“When fate sleeps, chaos dreams.”</p>
+  </header>
+
+  <main>
+    <div class="chapter-container">
+      <h2>Chapter 1: Genesis</h2>
+      <!-- Your full chapter content goes here -->
+      <!-- I’ve already formatted it in the previous messages -->
+      <!-- You can paste it here or ask me to return it as a separate block again -->
+    </div>
+
+    <div class="comment-section">
+      <h3>💬 Comments</h3>
+      <input type="text" id="username" placeholder="Your name" />
+      <textarea id="comment" placeholder="Write your comment..."></textarea>
+      <button id="post-btn">Post Comment</button>
+      <div id="comment-list"></div>
+    </div>
+  </main>
+
+  <div id="discord-btn">😴</div>
+
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-app.js";
+    import { getFirestore, collection, addDoc, getDocs, query, orderBy } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore.js";
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyDr7A9YCszLBlqhqVEqJEyMA6BUsrp58O0",
+      authDomain: "eterna-fire.firebaseapp.com",
+      projectId: "eterna-fire",
+      storageBucket: "eterna-fire.appspot.com",
+      messagingSenderId: "585825943919",
+      appId: "1:585825943919:web:277f4b0e7dbcf8280a689a",
+      measurementId: "G-KX115TBZ4K"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const db = getFirestore(app);
+
+    const postBtn = document.getElementById("post-btn");
+    const usernameInput = document.getElementById("username");
+    const commentInput = document.getElementById("comment");
+    const commentList = document.getElementById("comment-list");
+
+    async function loadComments() {
+      commentList.innerHTML = "";
+      const q = query(collection(db, "comments"), orderBy("timestamp", "desc"));
+      const querySnapshot = await getDocs(q);
+      querySnapshot.forEach((doc) => {
+        const data = doc.data();
+        const div = document.createElement("div");
+        div.classList.add("comment");
+        div.innerHTML = `<strong>${data.username}</strong><p>${data.message}</p>`;
+        commentList.appendChild(div);
+      });
+    }
+
+    postBtn.addEventListener("click", async () => {
+      const username = usernameInput.value.trim();
+      const message = commentInput.value.trim();
+      if (!username || !message) return alert("Please fill in all fields.");
+
+      await addDoc(collection(db, "comments"), {
+        username,
+        message,
+        timestamp: new Date()
+      });
+
+      usernameInput.value = "";
+      commentInput.value = "";
+      loadComments();
+    });
+
+    loadComments();
+
+    const discordBtn = document.getElementById("discord-btn");
+    let isAwake = false;
+    discordBtn.addEventListener("click", () => {
+      if (!isAwake) {
+        discordBtn.textContent = "😳";
+        window.open("https://discord.gg/rzaFvEyB", "_blank");
+        isAwake = true;
+        setTimeout(() => {
+          discordBtn.textContent = "😴";
+          isAwake = false;
+        }, 2000);
+      }
+    });
+  </script>
+</body>
+</html>

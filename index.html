@@ -23,7 +23,13 @@
     <section class="intro">
       <h2>Welcome to Eternum</h2>
       <p>Start the serialized story and explore the saga.</p>
-      <a href="#chapter1" class="chapter-link">Read Genesis — Chapter 1</a>
+      <div class="chapter-controls">
+  <button onclick="showChapterList()">Read Chapters</button>
+  <div id="chapterList" style="display: none;">
+    <button onclick="showChapter1()">Read Chapter 1</button>
+  </div>
+</div>
+
       <div class="vale-cross">
         <img src="vale.png" alt="Vale Cross" />
       </div>

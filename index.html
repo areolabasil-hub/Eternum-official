@@ -352,5 +352,73 @@ Silence.
       window.open("https://discord.gg/YhexuGb7BZ", "_blank");
     });
   </script>
+  <script>
+// View switching
+const homeView = document.getElementById('home-view');
+const chaptersView = document.getElementById('chapters-view');
+const chapter1View = document.getElementById('chapter1-view');
+
+// Buttons
+document.getElementById('read-chapters-btn').addEventListener('click', () => {
+  homeView.style.display = 'none';
+  chaptersView.style.display = 'block';
+});
+
+document.getElementById('glossary-btn').addEventListener('click', () => {
+  alert('Glossary coming soon.');
+});
+
+document.getElementById('chapter1-link').addEventListener('click', () => {
+  chaptersView.style.display = 'none';
+  chapter1View.style.display = 'block';
+});
+
+document.getElementById('back-to-chapters').addEventListener('click', () => {
+  chapter1View.style.display = 'none';
+  chaptersView.style.display = 'block';
+});
+</script>
+<!-- HOME VIEW -->
+<div id="home-view">
+  <!-- your current home content -->
+</div>
+
+<!-- CHAPTERS LIST VIEW -->
+<div id="chapters-view" style="display:none;">
+  <h2>Chapters</h2>
+  <ul>
+    <li><a href="#" id="chapter1-link">Chapter 1 — Genesis</a></li>
+    <li>Chapter 2 — Coming Soon</li>
+  </ul>
+</div>
+
+<!-- CHAPTER 1 VIEW -->
+<div id="chapter1-view" style="display:none;">
+  <button id="back-to-chapters">← Back</button>
+  <h2>Chapter 1 — Genesis</h2>
+  <div class="chapter-text">
+    <!-- Paste your full chapter 1 text here -->
+  </div>
+
+  <!-- Comments -->
+  <div id="comment-section">
+    <textarea placeholder="Write a comment..."></textarea>
+    <button id="post-comment">Post</button>
+    <div id="comments"></div>
+  </div>
+</div>
+<script>
+document.getElementById('post-comment').addEventListener('click', () => {
+  const textarea = document.querySelector('#comment-section textarea');
+  const commentsDiv = document.getElementById('comments');
+  const commentText = textarea.value.trim();
+  if (!commentText) return;
+  const p = document.createElement('p');
+  p.textContent = commentText;
+  commentsDiv.appendChild(p);
+  textarea.value = '';
+});
+</script>
+
 </body>
 </html>

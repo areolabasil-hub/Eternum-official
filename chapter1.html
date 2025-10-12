@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chapter 1 — Genesis | Eternum</title>
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Firebase SDK -->
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-app.js";
+    import { getFirestore, collection, addDoc, getDocs } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-firestore.js";
+
+    const firebaseConfig = {
+  apiKey: "AIzaSyAyuytagTdgXCwBxk-Jq89FWJxDMmWrrpQ",
+  authDomain: "eternum-comments.firebaseapp.com",
+  projectId: "eternum-comments",
+  storageBucket: "eternum-comments.firebasestorage.app",
+  messagingSenderId: "1000576381471",
+  appId: "1:1000576381471:web:fc4cc6c890952ff1381b2a"
+};
+    const app = initializeApp(firebaseConfig);
+    const db = getFirestore(app);
+    const commentsRef = collection(db, "comments_chapter1");
+
+    // Save and load comments
+    async function loadComments() {
+      const snapshot = await getDocs(commentsRef);
+      const commentsDiv = document.getElementById("comments");
+      commentsDiv.innerHTML = "";
+      snapshot.forEach((doc) => {
+        const data = doc.data();
+        const div = document.createElement("div");
+        div.classList.add("comment");
+        div.innerHTML = `<p><strong>${data.name}</strong>: ${data.comment}</p>`;
+        commentsDiv.appendChild(div);
+      });
+    }
+
+    window.addEventListener("DOMContentLoaded", () => {
+      const form = document.getElementById("commentForm");
+      form.addEventListener("submit", async (e) => {
+        e.preventDefault();
+        const name = document.getElementById("name").value.trim();
+        const comment = document.getElementById("comment").value.trim();
+        if (!name || !comment) return;
+        await addDoc(commentsRef, { name, comment });
+        form.reset();
+        loadComments();
+      });
+      loadComments();
+    });
+  </script>
+</head>
+
+<body>
+  <header>
+    <h1 class="title">ETERN<span>UM</span></h1>
+    <div class="button-container">
+      <a href="chapters.html" class="button">← Back to Chapters</a>
+    </div>
+  </header>
+
+  <main class="chapter-container">
+    <h2>Chapter 1 — Genesis</h2>
+    <div class="chapter-text">
+      The throne of hell was never meant for a human-except one.
+
+
+Betrayed by his kind.
+Forgotten by the Fortuna’s. 
+
+He is hell-bent on revenge as his name fades from life itself. 
+
+He is neither human nor Fortuna. 
+He is something else. 
+
+Every fibre of his body reshaping into the divine and damned. 
+
+Slave. Thrall. General. Vizier. 
+
+Each step soaked in lies and sharpened by deceit, till he claimed the throne himself.
+
+He was called the bringer of death. But no...this man was deaths vessel. 
+
+Now, he wielded the chains of eternity.
+
+Hells fire bent to his will and even the undead dared not whisper his name. 
+
+Glowing fire possesses his eyes, his face bathed in bitter satisfaction.
+
+His voice sent chills down the spine of hell at once. 
+
+“It is time”.
+  
+ 
+Far away from scorching hell…
+Beneath the sun still warm and sky still blue...
+
+A boy walks home from school-unaware of the journey and darkness that lies ahead.
+
+“I’m a year older-so I’m 17 now.”
+
+ “Ohh, yeah. I gotta go see Mom at the hospital.”
+
+ “I don’t think I’ve seen-”
+
+WHACK
+A banana smacked him in the head. 
+
+“I’ve been around school looking for your ass!” she says while heaving for breath and wiping the 
+sweat from her brow. 
+
+Damon hands her a napkin, secretly fascinated by her beauty.
+
+“Didn’t you hear me? Where you been?” she asked.
+
+“Ohh I’m sorry. I was at band practice.” 
+He looked away. 
+
+“I was just thinking about you. I haven’t seen you in a while” 
+
+ “Yeah me too. Ive been occupied with basketball classes”. 
+
+“What are you doing” Damon asked, confused, as she dug through his bag.
+
+“ There its is, I’m looking for your test results. Wanna compare them to mine.” 
+She sat down at the nearest bench, her voice serious. 
+
+“You could’ve just asked” he sighed in mock annoyance 
+
+“Somehow you always seem to beat me don’t ya?” 
+She smirked, eyes glinting with admiration. 
+
+“You said you were looking for me. Why?” 
+
+“Ohh, right. Gotcha something. Never understood your obsession with the guy, but here you go, Happy Birthday” 
+
+She hands him a piece of hard paper. 
+
+Surprised, he took it gently.  
+
+“You got me tickets...to the Monster Note Memorabilia Auction. 
+
+“I thought they were sold out!.” he said, smiling wide.
+
+She giggled. “My mom’s friends with the organiser. You’ll get to hang out with him the whole time.”
+
+“Thank you, Natsuki” 
+
+“I’m gonna be late, I’ve gotta go” she said. They bid themselves goodbye. 
+
+
+Arriving home, he noticed a wrapped present on table-his father’s gift.  
+
+He tore it open.
+
+Inside was a ring, silver, carved with the family crest.
+
+“A ring...with a Kamon?”
+
+ He slid it onto his middle finger.
+
+Most of  the day was blurred into reading, gaming, cake. 
+
+All celebrated alone. 
+
+And yet...he seemed content. 
+
+Clank. 
+
+The door goes behind him as he left for the hospital. 
+The streets were busy as usual, but, something felt off. A chill in the air. 
+
+Cars hummed past. Parents called their kids into the house-warning them not to catch a cold.
+Digital billboards highlighting new generator inventions and gaming wars.
+
+“Whys it cold​​? Even the rings freezing?” he says as he hides his hands in his sleeves.
+“Never trust the weatherman I guess” he says while shivering.
+
+Pauses. Opening the doors to the hospital with the smell of antiseptics attacking his throat.
+Glancing at the ring again it seemed tighter on his hand and heavier. 
+He ignores it. 
+
+His mother still laying in bed, sheets pulled to her stomach.
+Her breathing, shallow. 
+
+His mothers body. Life depleting. 
+
+Holding the tears was the hardest thing he’s ever done. 
+
+“Mom, how are you feeling?” 
+His voice cracked with concern.
+
+“Have you been taking your meds”. 
+
+Silence
+
+“You’re still not gonna talk, huh?”
+
+He decides to speak for her-telling her stories of winning the online chess leagues, his grades, band practice.
+
+Until finally her voice broke through.
+
+“ Do you...have any friends” 
+
+He froze. 
+
+“...I have Natsuki” he whispered. 
+
+“She’s not your friend.”
+Her eyes-hollow, pale-cut into him.
+
+“Why would anyone want to be around you”
+ 
+He blinked. Confused. 
+
+“What are you talking about...?”. 
+
+She tuned away. Tears sliding down her cheeks. 
+
+“I never wanted a child,” she said, eyes fixed on the ceiling. Her voice trembled. 
+
+“I wanted my body. Beautiful. Like it was in my youth.”
+
+He stared down at his arms.
+
+“You came along and ruined it. I was a model. People loved me. Now, no one even knows who I am.”
+
+She sniffled.
+
+“You took it all from me. I regret ever having you.” 
+Her hands shot out, clutching his shirt trembling with rage. 
+“You were a mistake.”
+ Silence. 
+He wanted to scream but he couldn’t, like razors where at his neck.
+He always thought silence meant peace. But it feels like a punishment now. 
+He didn’t move. 
+He just handed her a cup of water.
+She slapped it away—hard. 
+CRASH
+The glass shatters mid-air. 
+A shard slices into his palm. 
+Blood dripped, slow, steady.
+He doesn’t cry or flinch. 
+“Why did you do that” his voice low, broken. 
+“Get out” his mother said.
+“Get out” she yelled. 
+Beep. Beep. Beep.
+The EKG ringed. 
+
+“Mom..Mom” 
+No response 
+ 
+BANG goes the door
+
+His footsteps echo in the hallways 
+
+Speeds up. Slips.
+Sees another bald patient. “does he have cancer​?” he thought, not for longer than a second. 
+Gets back up. 
+‘Mistake’. ‘Regret’. ‘You took it all away from me.’ 
+His mothers words echo while sprinting down the hallways.  
+
+He reaches the doctors. Breathless. Panicked. 
+“My mother...HELP her!!” the doctors rush there. 
+
+EKG beep. He lunges forward but the nurse block him.
+“Stay back” the young nurse says. 
+He obeys. 0 resistance. 
+ 
+He calls his dad-no answer. Texts him-no reply. 
+He’s still replaying his mothers words. 
+“Why would she do that?...why would she says that?” 
+“Did she really hide her hate for 17 years”
+
+“Mr Vale. Mr Vale. Mr Vale.”  the nurse repeats herself higher and higher. She taps him.
+
+Rushes of his seat.
+“Is she alright?”
+
+Silence. 
+
+
+
+
+    </div>
+
+    <div class="comments-section">
+      <h3>Comments</h3>
+      <form id="commentForm">
+        <input type="text" id="name" placeholder="Name" required>
+        <textarea id="comment" placeholder="Write your comment..." required></textarea>
+        <button type="submit">Post</button>
+      </form>
+      <div id="comments"></div>
+    </div>
+  </main>
+</body>
+</html>

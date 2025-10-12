@@ -5,270 +5,29 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Eternum — A Digital Light Novel</title>
   <link rel="stylesheet" href="style.css">
-  <script type="module" src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app.js"></script>
-  <script type="module" src="https://www.gstatic.com/firebasejs/9.22.2/firebase-firestore.js"></script>
 </head>
 <body>
   <header>
     <h1 class="title">ETERN<span>UM</span></h1>
     <p class="subtitle">A digital light-novel — a serialized reading experience inspired by manga & anime.</p>
-    <div class="buttons">
-      <button id="readBtn">Read Chapters</button>
-      <button id="glossaryBtn">Glossary</button>
+    <div class="button-container">
+      <a href="chapters.html" class="button">Read Chapters</a>
+      <a href="glossary.html" class="button">Glossary</a>
     </div>
   </header>
 
   <main>
     <img src="vale.png" alt="Vale cross" class="cross">
-
     <section id="home">
       <h2>Welcome to Eternum</h2>
-      <p>Start the serialized story and explore the glossary. Click read to begin Genesis.</p>
-      <a href="#" id="chapterLink">Read Genesis — Chapter 1</a>
-    </section>
-
-    <section id="chapters" class="hidden">
-      <h2>Chapters</h2>
-      <ul>
-        <li><a href="#" id="ch1">Chapter 1 — Genesis</a></li>
-        <li class="coming-soon">Coming Soon...</li>
-      </ul>
-      <div id="chapterContent" class="hidden">
-        <h3>Chapter 1 — Genesis</h3>
-        <p id="chapterText">
-          The throne of hell was never meant for a human—except one.<br><br>
-          Betrayed by his kind. Forgotten by the Fortuna’s...<br><br>
-     
-
-He is hell-bent on revenge as his name fades from life itself.<br><br> 
-
-He is neither human nor Fortuna.<br> 
-He is something else.<br><br> 
-
-Every fibre of his body reshaping into the divine and damned. <br><br>
-
-Slave. Thrall. General. Vizier. <br><br>
-
-Each step soaked in lies and sharpened by deceit, till he claimed the throne himself.<br><br>
-
-He was called the bringer of death. But no...this man was deaths vessel. <br><br>
-
-Now, he wielded the chains of eternity.<br><br>
-
-Hells fire bent to his will and even the und dared not whisper his name.<br><br> 
-
-Glowing fire possesses his eyes, his face bathed in bitter satisfaction.<br><br>
-
-His voice sent chills down the spine of hell at once.<br><br>
-
-“It is time”.<br><br>
-  <hr>
- 
-Far away from scorching hell…<br>
-Beneath the sun still warm and sky still blue...<br><br>
-
-A boy walks home from school-unaware of the journey and darkness that lies ahead. <br><br>
-
-“I’m a year older-so I’m 17 now.”<br><br>
-
- “Ohh, yeah. I gotta go see Mom at the hospital.”<br><br>
-
- “I don’t think I’ve seen-”<br><br>
-
-WHACK<br>
-A banana smacked him in the head. <br><br>
-
-“I’ve been around school looking for your ass!” she says while heaving for breath and wiping the 
-sweat from her brow. <br><br>
-
-Damon hands her a napkin, secretly fascinated by her beauty.<br><br>
-
-“Didn’t you hear me? Where you been?” she asked.<br><br>
-
-“Ohh I’m sorry. I was at band practice.” <br>
-He looked away. <br><br>
-
-“I was just thinking about you. I haven’t seen you in a while” <br><br>
-
- “Yeah me too. Ive been occupied with basketball classes”. <br><br>
-
-“What are you doing” Damon asked, confused, as she dug through his bag.<br><br>
-
-“ There its is, I’m looking for your test results. Wanna compare them to mine.” <br>
-She sat down at the nearest bench, her voice serious. <br><br>
-
-“You could’ve just asked” he sighed in mock annoyance <br><br>
-
-“Somehow you always seem to beat me don’t ya?” <br>
-She smirked, eyes glinting with admiration. <br><br>
-
-“You said you were looking for me. Why?” <br><br>
-
-“Ohh, right. Gotcha something. Never understood your obsession with the guy, but here you go, Happy Birthday” <br><br>
-
-She hands him a piece of hard paper. <br><br>
-
-Surprised, he took it gently.  <br><br>
-
-“You got me tickets...to the Monster Note Memorabilia Auction. <br><br>
-
-“I thought they were sold out!.” he said, smiling wide.<br><br>
-
-She giggled. “My mom’s friends with the organiser. You’ll get to hang out with him the whole time.”<br><br>
-
-“Thank you, Natsuki” <br><br>
-
-“I’m gonna be late, I’ve gotta go” she said. They bid themselves goodbye. <br><br>
-
-<hr>
-Arriving home, he noticed a wrapped present on table-his father’s gift.  <br><br>
-
-He tore it open.<br><br>
-
-Inside was a ring, silver, carved with the family crest.<br><br>
-
-“A ring...with a Kamon?”<br><br>
-
- He slid it onto his middle finger.<br><br>
-
-Most of  the day was blurred into reading, gaming, cake. <br><br>
-
-All celebrated alone. <br><br>
-
-And yet...he seemed content. <br><br>
-
-Clank. <br><br>
-
-The door goes behind him as he left for the hospital. <br>
-The streets were busy as usual, but, something felt off. A chill in the air. <br><br>
-
-Cars hummed past. Parents called their kids into the house-warning them not to catch a cold.<br>
-Digital billboards highlighting new generator inventions and gaming wars.<br><br>
-
-“Whys it cold​​? Even the rings freezing?” he says as he hides his hands in his sleeves.<br>
-“Never trust the weatherman I guess” he says while shivering.<br><br>
-
-Pauses. Opening the doors to the hospital with the smell of antiseptics attacking his throat.<br>
-Glancing at the ring again it seemed tighter on his hand and heavier. <br>
-He ignores it. <br><br>
-
-His mother still laying in bed, sheets pulled to her stomach.<br>
-Her breathing, shallow. <br><br>
-
-His mothers body. Life depleting.<br><br>
-
-Holding the tears was the hardest thing he’s ever done. <br><br>
-
-“Mom, how are you feeling?” <br>
-His voice cracked with concern.<br><br>
-
-“Have you been taking your meds”. <br><br>
-
-Silence<br><br>
-
-“You’re still not gonna talk, huh?”<br><br>
-
-He decides to speak for her-telling her stories of winning the online chess leagues, his grades, band practice.<br><br>
-
-Until finally her voice broke through.<br><br>
-
-“ Do you...have any friends” <br><br>
-
-He froze. <br><br>
-
-“...I have Natsuki” he whispered. <br><br>
-
-“She’s not your friend.”<br><br>
-Her eyes-hollow, pale-cut into him.<br><br>
-
-“Why would anyone want to be around you”<br><br>
- 
-He blinked. Confused. <br><br>
-
-“What are you talking about...?”. <br><br>
-
-She tuned away. Tears sliding down her cheeks. <br><br>
-
-“I never wanted a child,” she said, eyes fixed on the ceiling. Her voice trembled. <br><br>
-
-“I wanted my body. Beautiful. Like it was in my youth.”<br><br>
-
-He stared down at his arms.<br><br>
-
-“You came along and ruined it. I was a model. People loved me. Now, no one even knows who I am.”<br><br>
-
-She sniffled.<br><br>
-
-“You took it all from me. I regret ever having you.” <br>
-Her hands shot out, clutching his shirt trembling with rage. <br>
-“You were a mistake.”<br>
- Silence. <br><br>
-He wanted to scream but he couldn’t, like razors where at his neck.<br>
-He always thought silence meant peace. But it feels like a punishment now. <br>
-He didn’t move. <br>
-He just handed her a cup of water.<br>
-She slapped it away—hard. <br><br>
-CRASH<br><br>
-The glass shatters mid-air. <br>
-A shard slices into his palm.<br> 
-Blood dripped, slow, steady.<br>
-He doesn’t cry or flinch. <br><br>
-“Why did you do that” his voice low, broken. <br>
-“Get out” his mother said.<br>
-“Get out” she yelled. <br>
-Beep. Beep. Beep.<br>
-The EKG ringed. <br><br>
-
-“Mom..Mom” <br>
-No response <br><br>
- 
-BANG goes the door<br><br>
-
-His footsteps echo in the hallways <br><br>
-
-Speeds up. Slips.<br>
-Sees another bald patient. “does he have cancer​?” he thought, not for longer than a second. <br>
-Gets back up. <br>
-‘Mistake’. ‘Regret’. ‘You took it all away from me.’ <br>
-His mothers words echo while sprinting down the hallways.  <br><br>
-
-He reaches the doctors. Breathless. Panicked. <br>
-“My mother...HELP her!!” the doctors rush there.<br><br> 
-
-EKG beep. He lunges forward but the nurse block him.<br>
-“Stay back” the young nurse says. <br>
-He obeys. 0 resistance. <br><br>
- 
-He calls his dad-no answer. Texts him-no reply. <br>
-He’s still replaying his mothers words. <br>
-“Why would she do that?...why would she says that?” <br>
-“Did she really hide her hate for 17 years”<br><br>
-
-“Mr Vale. Mr Vale. Mr Vale.”  the nurse repeats herself higher and higher. She taps him.<br><br>
-
-Rushes of his seat.<br><br>
-“Is she alright?”<br>
-
-Silence. 
-
-
-        </p>
-
-        <div class="comments-section">
-          <h4>Comments</h4>
-          <form id="commentForm">
-            <input type="text" id="name" placeholder="Name" required>
-            <textarea id="comment" placeholder="Write your comment..." required></textarea>
-            <button type="submit">Post</button>
-          </form>
-          <div id="comments"></div>
-        </div>
-      </div>
+      <p>Start the serialized story and explore the glossary. Click read to begin <em>Genesis</em>.</p>
     </section>
   </main>
 
+  <!-- Floating Discord emoji -->
   <div class="emoji" id="emoji" title="Click me!">😴</div>
 
+  <!-- Music -->
   <audio id="bgMusic" src="theme_calm.mp3" loop></audio>
   <button id="musicToggle" class="music-btn">🔊</button>
 
@@ -276,149 +35,25 @@ Silence.
     <p>Eternum — serialized release.</p>
   </footer>
 
-  <script type="module">
-    // Firebase
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-app.js";
-    import { getFirestore, collection, addDoc, getDocs } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-firestore.js";
-
-    const firebaseConfig = {
-      apiKey: "AIzaSyDr7A9YCszLBlqhqVEqJEyMA6BUsrp58O0",
-      authDomain: "eterna-fire.firebaseapp.com",
-      projectId: "eterna-fire",
-      storageBucket: "eterna-fire.appspot.com",
-      messagingSenderId: "585825943919",
-      appId: "1:585825943919:web:277f4b0e7dbcf8280a689a",
-      measurementId: "G-KX115TBZ4K"
-    };
-
-    const app = initializeApp(firebaseConfig);
-    const db = getFirestore(app);
-    const colRef = collection(db, "comments");
-
-    document.getElementById("commentForm").addEventListener("submit", async (e) => {
-      e.preventDefault();
-      const name = document.getElementById("name").value;
-      const comment = document.getElementById("comment").value;
-      await addDoc(colRef, { name, comment });
-      document.getElementById("name").value = "";
-      document.getElementById("comment").value = "";
-      loadComments();
-    });
-
-    async function loadComments() {
-      const querySnapshot = await getDocs(colRef);
-      const commentsDiv = document.getElementById("comments");
-      commentsDiv.innerHTML = "";
-      querySnapshot.forEach((doc) => {
-        const data = doc.data();
-        const div = document.createElement("div");
-        div.classList.add("comment");
-        div.innerHTML = `<p><strong>${data.name}</strong>: ${data.comment}</p><button class="replyBtn">Reply</button>`;
-        commentsDiv.appendChild(div);
-      });
-    }
-    loadComments();
-
-    // Toggle music when clicked anywhere on site
+  <script>
+    // Background music trigger
     const music = document.getElementById("bgMusic");
     let played = false;
     document.body.addEventListener("click", () => {
-      if (!played) {
-        music.play().catch(()=>{});
-        played = true;
-      }
+      if (!played) { music.play().catch(()=>{}); played = true; }
     });
 
-    // Music button
+    // Toggle music
     document.getElementById("musicToggle").addEventListener("click", () => {
-      if (music.paused) music.play();
-      else music.pause();
+      if (music.paused) music.play(); else music.pause();
     });
 
-    // Chapter navigation
-    const readBtn = document.getElementById("readBtn");
-    const chapterLink = document.getElementById("chapterLink");
-    const ch1 = document.getElementById("ch1");
-    const chapters = document.getElementById("chapters");
-    const chapterContent = document.getElementById("chapterContent");
-    readBtn.onclick = () => chapters.classList.remove("hidden");
-    chapterLink.onclick = () => chapters.classList.remove("hidden");
-    ch1.onclick = () => chapterContent.classList.toggle("hidden");
-
-    // Emoji floating + Discord link
+    // Discord emoji
     const emoji = document.getElementById("emoji");
     emoji.addEventListener("click", () => {
       emoji.textContent = "😳";
       window.open("https://discord.gg/YhexuGb7BZ", "_blank");
     });
   </script>
-  <script>
-// View switching
-const homeView = document.getElementById('home-view');
-const chaptersView = document.getElementById('chapters-view');
-const chapter1View = document.getElementById('chapter1-view');
-
-// Buttons
-document.getElementById('read-chapters-btn').addEventListener('click', () => {
-  homeView.style.display = 'none';
-  chaptersView.style.display = 'block';
-});
-
-document.getElementById('glossary-btn').addEventListener('click', () => {
-  alert('Glossary coming soon.');
-});
-
-document.getElementById('chapter1-link').addEventListener('click', () => {
-  chaptersView.style.display = 'none';
-  chapter1View.style.display = 'block';
-});
-
-document.getElementById('back-to-chapters').addEventListener('click', () => {
-  chapter1View.style.display = 'none';
-  chaptersView.style.display = 'block';
-});
-</script>
-<!-- HOME VIEW -->
-<div id="home-view">
-  <!-- your current home content -->
-</div>
-
-<!-- CHAPTERS LIST VIEW -->
-<div id="chapters-view" style="display:none;">
-  <h2>Chapters</h2>
-  <ul>
-    <li><a href="#" id="chapter1-link">Chapter 1 — Genesis</a></li>
-    <li>Chapter 2 — Coming Soon</li>
-  </ul>
-</div>
-
-<!-- CHAPTER 1 VIEW -->
-<div id="chapter1-view" style="display:none;">
-  <button id="back-to-chapters">← Back</button>
-  <h2>Chapter 1 — Genesis</h2>
-  <div class="chapter-text">
-    <!-- Paste your full chapter 1 text here -->
-  </div>
-
-  <!-- Comments -->
-  <div id="comment-section">
-    <textarea placeholder="Write a comment..."></textarea>
-    <button id="post-comment">Post</button>
-    <div id="comments"></div>
-  </div>
-</div>
-<script>
-document.getElementById('post-comment').addEventListener('click', () => {
-  const textarea = document.querySelector('#comment-section textarea');
-  const commentsDiv = document.getElementById('comments');
-  const commentText = textarea.value.trim();
-  if (!commentText) return;
-  const p = document.createElement('p');
-  p.textContent = commentText;
-  commentsDiv.appendChild(p);
-  textarea.value = '';
-});
-</script>
-
 </body>
 </html>

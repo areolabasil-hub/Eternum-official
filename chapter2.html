@@ -1,3 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chapter 2 — Awakening | Eternum</title>
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Firebase SDK -->
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-app.js";
+    import { getFirestore, collection, addDoc, getDocs } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-firestore.js";
+
+    const firebaseConfig = {
+  apiKey: "AIzaSyAyuytagTdgXCwBxk-Jq89FWJxDMmWrrpQ",
+  authDomain: "eternum-comments.firebaseapp.com",
+  projectId: "eternum-comments",
+  storageBucket: "eternum-comments.firebasestorage.app",
+  messagingSenderId: "1000576381471",
+  appId: "1:1000576381471:web:fc4cc6c890952ff1381b2a"
+};
+    const app = initializeApp(firebaseConfig);
+    const db = getFirestore(app);
+    const commentsRef = collection(db, "comments_chapter1");
+
+    // Save and load comments
+    async function loadComments() {
+      const snapshot = await getDocs(commentsRef);
+      const commentsDiv = document.getElementById("comments");
+      commentsDiv.innerHTML = "";
+      snapshot.forEach((doc) => {
+        const data = doc.data();
+        const div = document.createElement("div");
+        div.classList.add("comment");
+        div.innerHTML = `<p><strong>${data.name}</strong>: ${data.comment}</p>`;
+        commentsDiv.appendChild(div);
+      });
+    }
+
+    window.addEventListener("DOMContentLoaded", () => {
+      const form = document.getElementById("commentForm");
+      form.addEventListener("submit", async (e) => {
+        e.preventDefault();
+        const name = document.getElementById("name").value.trim();
+        const comment = document.getElementById("comment").value.trim();
+        if (!name || !comment) return;
+        await addDoc(commentsRef, { name, comment });
+        form.reset();
+        loadComments();
+      });
+      loadComments();
+    });
+  </script>
+</head>
+
+<body>
+  <header>
+    <h1 class="title">ETERN<span>UM</span></h1>
+    <div class="button-container">
+      <a href="chapters.html" class="button">← Back to Chapters</a>
+    </div>
+  </header>
+
+  <main class="chapter-container">
+    <h2>Chapter 2 — Genesis</h2>
+    <div class="chapter-text">
+
+
 <section class="chapter" id="chapter-2">
   <h2>Chapter 2</h2>
   <p>The nurse hesitated before speaking.<br>
@@ -166,3 +234,17 @@
 
   <p>“What the fu—”</p>
 </section>
+</div>
+
+    <div class="comments-section">
+      <h3>Comments</h3>
+      <form id="commentForm">
+        <input type="text" id="name" placeholder="Name" required>
+        <textarea id="comment" placeholder="Write your comment..." required></textarea>
+        <button type="submit">Post</button>
+      </form>
+      <div id="comments"></div>
+    </div>
+  </main>
+</body>
+</html>

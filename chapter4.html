@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chapter 3 — Monarch | Aeternum</title>
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Firebase SDK -->
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-app.js";
+    import { getFirestore, collection, addDoc, getDocs } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-firestore.js";
+
+    const firebaseConfig = {
+  apiKey: "AIzaSyAyuytagTdgXCwBxk-Jq89FWJxDMmWrrpQ",
+  authDomain: "eternum-comments.firebaseapp.com",
+  projectId: "eternum-comments",
+  storageBucket: "eternum-comments.firebasestorage.app",
+  messagingSenderId: "1000576381471",
+  appId: "1:1000576381471:web:fc4cc6c890952ff1381b2a"
+};
+    const app = initializeApp(firebaseConfig);
+    const db = getFirestore(app);
+    const commentsRef = collection(db, "comments_chapter1");
+
+    // Save and load comments
+    async function loadComments() {
+      const snapshot = await getDocs(commentsRef);
+      const commentsDiv = document.getElementById("comments");
+      commentsDiv.innerHTML = "";
+      snapshot.forEach((doc) => {
+        const data = doc.data();
+        const div = document.createElement("div");
+        div.classList.add("comment");
+        div.innerHTML = `<p><strong>${data.name}</strong>: ${data.comment}</p>`;
+        commentsDiv.appendChild(div);
+      });
+    }
+
+    window.addEventListener("DOMContentLoaded", () => {
+      const form = document.getElementById("commentForm");
+      form.addEventListener("submit", async (e) => {
+        e.preventDefault();
+        const name = document.getElementById("name").value.trim();
+        const comment = document.getElementById("comment").value.trim();
+        if (!name || !comment) return;
+        await addDoc(commentsRef, { name, comment });
+        form.reset();
+        loadComments();
+      });
+      loadComments();
+    });
+  </script>
+</head>
+
+
+
+<p>Metals clanked.</p>
+<p>Engines roared from a distance.</p>
+<p>The alley wasn’t quiet anymore.</p>
+<br>
+
+<p>Darian stood there — still catching his breath, knuckles bruised, body tense.</p>
+<p>The others arrived.</p>
+<p>Thirty of them.</p>
+<p>Maybe more.</p>
+<br>
+
+<p>The night felt heavier — darker.</p>
+<p>Then they came.</p>
+<br>
+
+<p>“You’re finished boy,” said the man he sent flying to the bin.</p>
+<p>He fled to an abandoned factory.</p>
+<p>They followed.</p>
+<br>
+
+<p>Something twitched in him. He didn’t blink. He didn’t speak.</p>
+<p>He just moved.</p>
+<br>
+
+<p>The first pipe swung at him — dodges.</p>
+<p>Darian caught his arm and slammed him into a wall.</p>
+<p>The second came running. Bare handed — one kick to the head, lights out.</p>
+<p>Each strike felt easier, sharper. Like his body already knew what to do.</p>
+<br>
+
+<p>He ducked, spun, elbowed, punched. No thought, just rhythm.</p>
+<p>He wasn’t fighting anymore. He was dominating.</p>
+<br>
+
+<p>Someone shouted. A biker revved his engine at Darian.</p>
+<p>Darian turned his head slightly, eyes calm.</p>
+<p>He sprinted — full speed — and leapt.</p>
+<p>The world slowed for a second as his body shot forward in a straight line, foot connecting with the rider’s chest.</p>
+<br>
+
+<p>The man flew off the bike.</p>
+<p>Darian landed on it perfectly.</p>
+<p>He didn’t even know how.</p>
+<p>He just did.</p>
+<br>
+
+<p>He tilted forward, twisting the throttle, wind tearing past his face.</p>
+<p>A bullet flew past his head — then another.</p>
+<p>Raised his bike up, motion with one tyre.</p>
+<p>The sound was there… but they never met him.</p>
+<p>He leaned to the side, the bullets cutting through empty air.</p>
+<br>
+
+<p>A big man stepped ahead. Shoulder broad, arms of steel.</p>
+<p>Darian smirked while he sped up.</p>
+<p>The giant roared. Lunged a plank at Darian.</p>
+<p>Darian goes low, backflips off the bike. Catches plank and redirects towards the man.</p>
+<br>
+
+<p>The man grunts catching the bike after impact. The plank pierces the bike.</p>
+<p>Laughing as he tosses it into OBSCURON Tower.</p>
+<p>For half a second, nothing.</p>
+<br>
+
+<p><strong>BOOM</strong></p>
+<br>
+
+<p>The air itself punched him — fire bloomed towards him. Red and gold.</p>
+<p>Darian felt his feet lift off the ground, body flung backward like a feather.</p>
+<p>He hit the pavement hard — pain exploded through his ribs.</p>
+<p>Lights out.</p>
+<br>
+
+<p>…</p>
+<p>Muffled voices. Sirens. The crackle of fire.</p>
+<p>His eyes snapped open. His ears rang — a high-pitched wiiiiiiiiiiiiiir that drowned out everything.</p>
+<p>No time to think. No time to breathe.</p>
+<p>Instinct — that’s all he had left.</p>
+<p>He rolled onto his side, coughing smoke, eyes burning.</p>
+<p>The orange glow painted the sky behind him — crushed machines, broken glass, and the smell of burnt oil.</p>
+<p>Then he heard it — the cops shouting, firefighters yelling orders.</p>
+<p>They were close. Too close.</p>
+<p>His body moved before his mind could.</p>
+<p>One deep breath, a glance at the chaos — and he ran.</p>
+<p>Fast.</p>
+<p>The kind of fast that didn’t feel human.</p>
+<p>He looked back.</p>
+<p>The alley burned orange.</p>
+<p>The smell of metal and fire.</p>
+<p>“What… have I done?” he whispered, voice trembling.</p>
+<p>He ran. Again.</p>
+<br>
+
+<p>He didn’t stop until the city lights blurred.</p>
+<p>By the time he reached home, his lungs were on fire.</p>
+<p>His father sat slumped in the living room, bottle half-empty.</p>
+<p>“You’re late,” he slurred.</p>
+<p>“I—”</p>
+<p>The slap came fast.</p>
+<p>Darian caught it. A reflex — they’re both surprised.</p>
+<p>For a second, neither of them moved.</p>
+<p>“You’re a man now, huh?” he mumbled. “Where’s your damn ring—”</p>
+<p>He stumbled, missed the chair, fell into it instead.</p>
+<p>Out cold.</p>
+<br>
+
+<p>Darian headed upstairs.</p>
+<p>Stopped at the steps.</p>
+<p>Then crouched. Jumped.</p>
+<p>Almost to the top in one move.</p>
+<p>He stood there.</p>
+<p>Half-afraid. Half in shock. Smiling just a little.</p>
+<p>“What’s happening to me?”</p>
+<br>
+
+<p>Morning.</p>
+<p>Saturday.</p>
+<p>The streets buzzed.</p>
+<p>He jogged past a crowd gathered around a taped-off area.</p>
+<p>Reporters. Cameras. Police.</p>
+<p>“…Fifty-four dead, three survivors,” one reporter said. “Police confirm it was caused by an explosion in the old district last night. Three witnesses describe a boy in his late teens—”</p>
+<p>Darian’s stomach turned.</p>
+<br>
+
+<p>A man in a lab coat pushed through, furious.</p>
+<p>“You idiots! Those punks were test subjects! Do you have any idea what you’ve destroyed?!”</p>
+<p>One officer stepped forward. “Sir, calm down—”</p>
+<p>“Calm down?!” the man shouted. “That was forty million yen! And it was just the prototype!”</p>
+<p>A forensic scientist nearby said quietly, “Initial reports suggest the blast started when a motorcycle hit the building. A chain reaction followed. One of the test machines… was vaporized.”</p>
+<p>The scientist turned, wiping sweat off his brow. “Honestly, we’re lucky it was only partial detonation.”</p>
+<p>The lab coat guy looked ready to explode again. “Partial? That was revolutionary tech! And you’re saying it got wiped out by some drunk bikers?!”</p>
+<p>No one replied.</p>
+<p>He kicked a broken crate in frustration.</p>
+<p>Darian took a step back.</p>
+<p>The cop noticed him.</p>
+<p>“Hey, kid — scram.”</p>
+<p>He did. Fast.</p>
+<br>
+
+<p>“Yo!”</p>
+<p>Darian turned.</p>
+<p>“Daiki?” he asked with surprise.</p>
+<p>Same easy grin, short curls, confidence written on his face.</p>
+<p>“Man, I thought you were in the States.”</p>
+<p>“Was,” Daiki said, adjusting his bag. “My dad works with the guys who built that generator that blew up. Had to fly back and rebuild it.”</p>
+<p>Darian froze. “…That generator?”</p>
+<p>“Yeah. Sucks, huh?”</p>
+<p>“Yeah…” he said, voice low.</p>
+<p>“How’s your mom, man? Does she make those fire Tonkatsu’s?” Daiki asked — joy printed on his forehead.</p>
+<p>Darian explains.</p>
+<p>Daiki went quiet. “Damn. I’m sorry, man.”</p>
+<p>“Yeah.”</p>
+<p>Daiki grinned. “You look good. You even got taller, man.”</p>
+<p>They promised to meet later. Fist-bumped and split paths.</p>
+<br>
+
+<p>Later that day, he found himself at Natsuki’s house.</p>
+<p>Her mom smiled wide. “Oh? A handsome boy’s here for you, Natsuki!”</p>
+<p>“Tell Pike I’m not interested!”</p>
+<p>“He says he’s Darian.”</p>
+<p>Footsteps.</p>
+<p>Then she appeared — hair tied, casual clothes, same eyes.</p>
+<p>He looked… different.</p>
+<p>Sharper. Healthier.</p>
+<p>No shadows under his eyes.</p>
+<p>“You look different,” she said.</p>
+<p>“Less zombie-ish?”</p>
+<p>“Barely.”</p>
+<br>
+
+<p>They walked to the park. He kicked rocks.</p>
+<p>“About the other day,” he said. “I’m sorry.”</p>
+<p>“It’s fine,” she said. “Kinda used to your crappy apologies.”</p>
+<p>He chuckles. “No need to be mean.”</p>
+<p>“No need to be a baby.”</p
+
+<p>He pointed at the basketball court.</p>
+<p>“Bet I can beat the best baller at Southmere.”</p>
+<p>“You don’t even play basketball,” she said, raising an eyebrow.</p>
+<p>He passed her the ball. “Watch and learn, tiger.”</p>
+<p>“Ohhh okay, don’t cry baby.”</p>
+<p>“Fine then. First to twenty.”</p>
+<p>“You’re on,” she said, determined.</p>
+<br>
+
+<p>The game started light — playful — then turned real.</p>
+<p>She dribbled, crossed, scored.</p>
+<p>He stole, dodged, leaped — scored back.</p>
+<p>When he jumped, his shirt lifted slightly — her eyes caught on his stomach.</p>
+<p>“Darian… has abs?” she whispered under her breath.</p>
+<p>He landed, spinning the ball in his hands.</p>
+<p>“Since when do you have abs?”</p>
+<p>“Jealous?” he said with a mocking face.</p>
+<p>Throws her rhythm off.</p>
+<p>“Twenty-six to eighteen,” he said. “Guess I win.”</p>
+<p>She sat, catching her breath. “You’ve been hiding that from me, dude?”</p>
+<p>“You wouldn’t believe me if I told you.”</p>
+<p>“Try me.”</p>
+<br>
+
+<p>“So you’re telling me your dad’s ring gave you abs? And you destroyed Dr Maniac’s generator?” she asked in disbelief.</p>
+<p>“I know it’s hard to bel—”</p>
+<p>“Hard’s an understatement.”</p>
+<p>“Why don’t you prove it to me,” she asked, standing in front of him.</p>
+<p>He noticed the way her shorts hugged her legs — then looked away fast.</p>
+<p>“Look at me, will ya?”</p>
+<p>Her palm comes up — not just a finger, but her whole hand — resting lightly under his chin, guiding his face up until their eyes meet.</p>
+<p>For a moment, the air freezes — in Darian’s mind.</p>
+<p>His eyes widen, a hint of surprise in them. “Wha— what is she doing?!” he thought.</p>
+<p>Her gaze sharpens.</p>
+<p>“If you’re really as strong as you say…” she smirks, “prove it. Bleep test. Now.”</p>
+<p>He groaned. “You suck.”</p>
+<p>“Run, hero. Like it’s your last.”</p>
+<p>He smirked, stretched, and took off — dust rising behind him as she watched, stopwatch in hand, pretending not to be impressed.</p>
+<br>
+
+<p>And when he hit the final beep, chest heaving, she smiled — small, proud, and maybe a little scared.</p>
+<p>“How’d I do?” he asked as they both sat.</p>
+<p>“You impressed me… but I’ve seen better.”</p>
+<br>
+
+<p>Their eyes met.</p>
+<p>Closer.</p>
+<p>Breath shorter.</p>
+<p>But neither moved.</p>
+<p>Just the wind between them.</p>
+<p>Just that unspoken thing — waiting.</p>
+<p>He didn’t know what was next, but for now this was enough.</p>

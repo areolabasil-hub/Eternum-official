@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chapter 3 — Monarch | Aeternum</title>
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Firebase SDK -->
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-app.js";
+    import { getFirestore, collection, addDoc, getDocs } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-firestore.js";
+
+    const firebaseConfig = {
+  apiKey: "AIzaSyAyuytagTdgXCwBxk-Jq89FWJxDMmWrrpQ",
+  authDomain: "eternum-comments.firebaseapp.com",
+  projectId: "eternum-comments",
+  storageBucket: "eternum-comments.firebasestorage.app",
+  messagingSenderId: "1000576381471",
+  appId: "1:1000576381471:web:fc4cc6c890952ff1381b2a"
+};
+    const app = initializeApp(firebaseConfig);
+    const db = getFirestore(app);
+    const commentsRef = collection(db, "comments_chapter1");
+
+    // Save and load comments
+    async function loadComments() {
+      const snapshot = await getDocs(commentsRef);
+      const commentsDiv = document.getElementById("comments");
+      commentsDiv.innerHTML = "";
+      snapshot.forEach((doc) => {
+        const data = doc.data();
+        const div = document.createElement("div");
+        div.classList.add("comment");
+        div.innerHTML = `<p><strong>${data.name}</strong>: ${data.comment}</p>`;
+        commentsDiv.appendChild(div);
+      });
+    }
+
+    window.addEventListener("DOMContentLoaded", () => {
+      const form = document.getElementById("commentForm");
+      form.addEventListener("submit", async (e) => {
+        e.preventDefault();
+        const name = document.getElementById("name").value.trim();
+        const comment = document.getElementById("comment").value.trim();
+        if (!name || !comment) return;
+        await addDoc(commentsRef, { name, comment });
+        form.reset();
+        loadComments();
+      });
+      loadComments();
+    });
+  </script>
+</head>
+
+<body>
+  <header>
+    <h1 class="title">AETERN<span>UM</span></h1>
+    <div class="button-container">
+      <a href="chapters.html" class="button">← Back to Chapters</a>
+    </div>
+  </header>
+
+  <main class="chapter-container">
+    <h2>Chapter 3 — Monarch</h2>
+    <div class="chapter-text">
+
+<p>“What the fu—”</p>
+<p>The ring pulsed again.</p>
+<p>His voice barely left his throat — panic choking what words remained.</p>
+<p>Cold one second, hot the next. The hum grew louder. Steady. Alive.</p>
+<p>Damon stumbled back, eyes wide, breath sharp. He yanked at it — twisting, pulling, shaking his hand like force alone could free him.</p>
+<p>It slipped loose.</p>
+<p>The ring spun through the air, clinking across the table, rolling toward the open window.</p>
+<p>He lunged.</p>
+<p>His breath caught as it teetered on the edge, his body halfway outside. The night wind cut against his face, cold and sharp.</p>
+<p>He caught it — just in time.</p>
+<p>He didn’t move. Just stared at the drop below.</p>
+<p>“I’d be dead if I fell… just like you always wanted,” he muttered.</p>
+<p>It didn’t feel cold.</p>
+<p>Didn’t feel magical.</p>
+<p>Just… normal.</p>
+<p>He slid it back on, breathing slow. The faint shimmer that had lit his room moments ago — gone.</p>
+<p>Darkness again.</p>
+
+<br>
+
+<p>Morning came too fast.</p>
+<p>Traffic murmured outside his window. His father’s door — still shut.</p>
+<p>He brushed his teeth, threw on his black Southmere High uniform — tie loose, shirt untucked.</p>
+<p>He looked fine. Almost cool.</p>
+<p>But the mirror didn’t lie. The ring glinted faintly.</p>
+<p>Breakfast sat untouched. Hunger left days ago.</p>
+<p>He walked to school with one strap of his bag slung over his shoulder, hands buried in pockets.</p>
+
+<br>
+
+<p>The club meeting dragged.</p>
+<p>By afternoon, he was in the gym helping Natsuki practice.</p>
+<p>“Fourteen threes in thirty minutes. New record,” he said, a faint smile tugging at his lips.</p>
+<p>Silence. She drank water.</p>
+<p>“How’s your dad doing?” she asked softly.</p>
+<p>“He’s drunk.”</p>
+<p>He bent to grab his bag.</p>
+<p>She caught sight of the scars.</p>
+<p>“Has he been hitting you?”</p>
+<p>“Yeah… but I’m fine.”</p>
+<p>“You’re not fine.” Her tone sharpened. “You’ve been dull in class, eating lunch alone on the roof. I’m trying to help you.”</p>
+<p>“I said I’m fine.”</p>
+<p>Her eyes flashed. “No. You don’t get to give me attitude. It’s been three months since the funeral, Damon. I’ve been there — even while losing someone too.”</p>
+<p>Tears welled up.</p>
+<p>“What do you mean?” he asked quietly.</p>
+<p>“My dad has Alzheimer’s,” she said. “You’d have known if you’d been there… I’m your best friend.”</p>
+<p>“Natsuki, I’m so—”</p>
+<p>“Don’t bother.” She swung her bag over her shoulder. “You’d rather bury it than talk about it.”</p>
+<p>She walked off.</p>
+<p>He didn’t follow — just stared at the floor, guilt pressing heavy on his chest.</p>
+
+<br>
+
+<p>By evening, he reached the Monster Note Memorabilia Auction early.</p>
+<p>(He still thought that name was dumb.)</p>
+<p>Rows of chairs. A makeshift stage. Old posters on faded walls.</p>
+<p>A man in his thirties — clean suit, slick hair — walked up.</p>
+<p>“You’re the one Natsuki’s mom talked about?”</p>
+<p>“Yeah.”</p>
+<p>“Appreciate the help. Mind holding that ladder steady?”</p>
+<p>Damon nodded. They worked in quiet rhythm — moving boxes, fixing cables.</p>
+
+<br>
+
+<p>Then—</p>
+<p><strong>Crash.</strong></p>
+<p>The top speaker broke loose, falling toward one of the helpers.</p>
+<p>“Hey! HEY! Mr. Seijuru!”</p>
+<p>He didn’t think — he moved.</p>
+<p>Feet pounding. Weaving through crates and cables. The world blurred at the edges.</p>
+<p>He reached just in time, shoulder slamming the stand, both hands catching the falling speaker.</p>
+<p>His knees buckled — but he held.</p>
+<p>The man blinked, stunned.</p>
+<p>“Woah, kid, you just saved my life. How’d you get here so fast?”</p>
+<p>“I was… nearby.”</p>
+<p>The man chuckled. “You look skinny but strong. Ever thought of joining the track team?”</p>
+<p>“Not really.”</p>
+<p>“Well, if you ever need something, come find me.”</p>
+
+<br>
+
+<p>The event went on — lights, voices, bidding — but Damon couldn’t stop replaying it.</p>
+<p>That speed. That strength.</p>
+<p>It didn’t feel human.</p>
+
+<br>
+
+<p>When it finally ended, the moon was high.</p>
+<p>He looked up.</p>
+<p>“Mom loves the moon,” he whispered.</p>
+<p>He raised his phone for a photo.</p>
+<p>Then froze.</p>
+<p>She wasn’t there anymore.</p>
+
+<br>
+
+<p>He took the long way home, hands deep in his pockets.</p>
+<p>Halfway there, he cut through an alley — shortcut.</p>
+<p>Bad idea.</p>
+
+<br>
+
+<p>Three guys. Drunk. Loud.</p>
+<p>“Yo, pretty boy,” one slurred. “Thought you could skip out on us, huh?”</p>
+<p>“Wrong guy,” Damon said, trying to pass.</p>
+<p>One grabbed his collar.</p>
+<p>Fists followed — gut, face, ribs.</p>
+<p>Laughter echoed off concrete.</p>
+
+<br>
+
+<p>Pain. Noise. Then— silence.</p>
+<p>The ringing in his ears wasn’t from the hits. It was from the ring.</p>
+<p>It glowed again — brighter, pulsing in sync with his heartbeat. The men didn’t even see it.</p>
+
+<br>
+
+<p>Then—</p>
+<p><strong>BOOM.</strong></p>
+<p>A flash. One screamed, clutching his eye from the exploded ring shards.</p>
+<p>“You bastard!” another yelled, swinging a bottle.</p>
+<p>But Damon was already moving — left, right — faster than thought.</p>
+<p>Every dodge left a faint afterimage, like a glitch in time.</p>
+<p>He didn’t understand it.</p>
+<p>But he liked it.</p>
+
+<br>
+
+<p>He struck back.</p>
+<p>A punch — thunder.</p>
+<p>Another — steel.</p>
+<p>Each hit sharper, faster, heavier — power roaring through his veins.</p>
+<p>One man hit the wall.</p>
+<p>Another crashed through crates.</p>
+<p>The last tumbled into a dumpster.</p>
+
+<br>
+
+<p>Silence again.</p>
+<p>Damon stood there, panting. His hands trembled, but his chest burned — alive.</p>
+<p>He looked at the shimmer fading from his hand.</p>
+<p>“…What the hell is happening to me?”</p>
+
+<br>
+
+<p>Then he heard it.</p>
+<p>Engines. Laughter. Boots scraping asphalt.</p>
+<p>Dozens of shadows in the distance.</p>
+<p>He cracked his knuckles, eyes cold.</p>
+<p>“Alright…” he muttered, stepping forward.</p>
+<p>“…let’s end this.”</p>
+
